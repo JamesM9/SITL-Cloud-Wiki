@@ -13,7 +13,6 @@ sudo apt install python3-packaging
 sudo apt install python3-jinja2
 cd
 git clone https://github.com/PX4/Firmware.git --recursive
-wait
 cd Firmware
 bash ./Tools/setup/ubuntu.sh
 cd
