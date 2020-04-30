@@ -1,11 +1,17 @@
 echo "Please be patient as the initial setup for the simulator is completed."
 sudo apt-get remove modemmanager
+sudo apt install python3-pip
 sudo apt install libgstreamer1.0-dev
 sudo apt install gstreamer1.0-plugins-good
 sudo apt install gstreamer1.0-plugins-bad
 sudo apt install gstreamer1.0-plugins-ugly
-sudo pip3 install --user toml empy numpy packaging 
-cd
+sudo python3 pip 
+sudo apt install python3-empy
+sudo apt install python3-numpy
+sudo apt install python3-toml
+sudo apt install python3-packaging
+sudo apt install python3-jinja2
+
 git clone https://github.com/PX4/Firmware.git --recursive
 wait
 cd Firmware
@@ -101,6 +107,8 @@ catkin_ws_source="source ~/catkin_ws/devel/setup.bash"
 if grep -Fxq "$catkin_ws_source" ~/.bashrc; then echo ROS catkin_ws setup.bash already in .bashrc;
 else echo "$catkin_ws_source" >> ~/.bashrc; fi
 source ~/.bashrc
+sudo su
+pip3 install --user pyros-genmsg
 
 # cd PX4-SITL-SIM
 # chmod +x startfixedwing.sh 
